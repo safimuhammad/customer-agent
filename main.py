@@ -20,7 +20,8 @@ from langchain.schema import (
 def init():
     # Load the OpenAI API key from the environment variable
     # load_dotenv()
-    os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+    if st.secrets:
+        os.environ['OPENAI_API_KEY'] = st.secrets['credentials']['OPENAI_API_KEY']
    
     # test that the API key exists
     if os.getenv("OPENAI_API_KEY") is None or os.getenv("OPENAI_API_KEY") == "":
