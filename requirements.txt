@@ -7,3 +7,4 @@ elevenlabs
 streamlit_bokeh_events
 openai
 bokeh==2.4.3
+ffmpeg-python
