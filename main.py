@@ -124,7 +124,7 @@ def main():
                     text= response.content,
                     voice="Bella",
                     model='eleven_monolingual_v1')
-                play(audio)
+                # play(audio)
                 # print(response.content,'response')
             st.session_state.messages.append(
                 AIMessage(content=response.content))
