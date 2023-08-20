@@ -6,3 +6,4 @@ streamlit_chat==0.0.2.2
 elevenlabs
 streamlit_bokeh_events
 openai
+bokeh
