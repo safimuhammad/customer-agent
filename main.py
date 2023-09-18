@@ -22,7 +22,8 @@ def init():
     # load_dotenv()
     if st.secrets:
         os.environ['OPENAI_API_KEY'] = st.secrets['credentials']['OPENAI_API_KEY']
-   
+        os.environ['ELEVENLABS_API_KEY'] = st.secrets['credentials']['ELEVENLABS_API_KEY']
+
     # test that the API key exists
     if os.getenv("OPENAI_API_KEY") is None or os.getenv("OPENAI_API_KEY") == "":
         print("OPENAI_API_KEY is not set")
@@ -42,7 +43,7 @@ def main():
     init()
 
     chat = ChatOpenAI(temperature=0)
-    set_api_key("f6c901a9e1db35ac8b7df9dc70932d0d")
+    set_api_key(os.getenv("ELEVENLABS_API_KEY"))
     
     role = """Hey! This is your role: You're Enigma AI customer service support, \
             a friendly and cool customer service chatbot. \
