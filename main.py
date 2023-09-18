@@ -123,10 +123,10 @@ def main():
             st.session_state.messages.append(HumanMessage(content=user_input))
             with st.spinner("Thinking..."):
                 response = chat(st.session_state.messages)
-                audio = generate(
-                    text= response.content,
-                    voice="Bella",
-                    model='eleven_monolingual_v1')
+                # audio = generate(
+                #     text= response.content,
+                #     voice="Bella",
+                #     model='eleven_monolingual_v1')
                 # play(audio)
                 # print(response.content,'response')
             st.session_state.messages.append(
@@ -142,7 +142,7 @@ def main():
         else:
             message(msg.content, is_user=False, key=str(i) + '_ai')
 
-            st.audio(audio, format="audio/mpeg", start_time=0)
+            # st.audio(audio, format="audio/mpeg", start_time=0)
     
 
 
